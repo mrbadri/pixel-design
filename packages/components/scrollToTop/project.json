@@ -1,0 +1,29 @@
+{
+  "name": "scrollToTop",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/components/scrollToTop/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/rollup:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/components/scrollToTop",
+        "tsConfig": "packages/components/scrollToTop/tsconfig.lib.json",
+        "project": "packages/components/scrollToTop/package.json",
+        "entryFile": "packages/components/scrollToTop/src/index.ts",
+        "external": ["react", "react-dom", "react/jsx-runtime"],
+        "rollupConfig": "@nx/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "packages/components/scrollToTop/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    }
+  }
+}
