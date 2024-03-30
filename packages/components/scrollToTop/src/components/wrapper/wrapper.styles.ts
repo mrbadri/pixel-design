@@ -2,15 +2,18 @@ import { cva } from 'class-variance-authority';
 
 export const wrapper = cva(
   [
+    'pd--scroll-to-top--wrapper',
     'fixed',
     'transition-all',
+    'delay-50',
     'transform',
     'flex ',
+    'z-50',
     'items-center',
     'justify-center',
     'cursor-pointer',
     'rounded-full',
-    'z-50',
+    'font-bold',
   ],
   {
     variants: {
@@ -19,9 +22,9 @@ export const wrapper = cva(
         false: ['opacity-0', ' scale-0'],
       },
       size: {
-        sm: ['w-10 ', 'h-10'],
-        md: ['w-12 ', 'h-12'],
-        lg: ['w-14 ', 'h-14'],
+        sm: ['w-10', 'h-10', 'text-[10px]'],
+        md: ['w-12', 'h-12', 'text-xs'],
+        lg: ['w-14', 'h-14', 'text-sm'],
       },
       position: {
         tr: ['top-4', 'right-4'],
@@ -30,15 +33,7 @@ export const wrapper = cva(
         bl: ['bottom-4', 'left-4'],
       },
     },
-    compoundVariants: [
-      {
-        // intent: 'primary',
-        // size: 'medium',
-        // class: 'uppercase',
-        // **or** if you're a React.js user, `className` may feel more consistent:
-        // className: "uppercase"
-      },
-    ],
+
     defaultVariants: {
       size: 'md',
       position: 'br',

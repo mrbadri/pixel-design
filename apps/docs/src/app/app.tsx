@@ -7,6 +7,8 @@ import { Route, Routes, Link } from 'react-router-dom';
 
 import { ScrollToTop } from '@pixel-design/scrollToTop';
 
+import { ArrowUp } from '@pixel-design/icon';
+
 export function App() {
   return (
     <div>
@@ -22,6 +24,9 @@ export function App() {
         <ul>
           <li>
             <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/icon">Icon</Link>
           </li>
           <li>
             <Link to="/scrollToTop">ScrollToTop</Link>
@@ -42,6 +47,7 @@ export function App() {
             </div>
           }
         />
+        <Route path="/icon" element={<ArrowUp />} />
         <Route
           path="/scrollToTop"
           element={

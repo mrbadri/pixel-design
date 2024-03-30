@@ -18,6 +18,7 @@
       "@mui-builder/core": ["packages/core/src/index.ts"],
       "@mui-builder/form": ["packages/components/form/src/index.ts"],
       "@mui-builder/utils": ["packages/utils/src/index.ts"],
+      "@pixel-design/icon": ["packages/components/icon/src/index.ts"],
       "@pixel-design/scrollToTop": [
         "packages/components/scrollToTop/src/index.ts"
       ]

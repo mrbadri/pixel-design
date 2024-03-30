@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { ProgressProps } from '../progress/progress.type';
+import { ScrollToTopProps } from './scrollToTop.types';
 
-/* eslint-disable-next-line */
-export interface UseScrollToTopProps {}
+const UseScrollToTop = (props: ScrollToTopProps) => {
+  const { icon, size = 'md' } = props;
 
-const UseScrollToTop = () => {
   const [progress, setProgress] = useState(0);
   const [hovered, setHovered] = useState(false);
 
@@ -13,7 +14,7 @@ const UseScrollToTop = () => {
       const documentHeight = document.documentElement.scrollHeight;
       const scrollTop = window.scrollY;
       const scrolled = (scrollTop / (documentHeight - windowHeight)) * 100;
-      setProgress(scrolled);
+      setProgress(Math.ceil(scrolled));
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -35,12 +36,32 @@ const UseScrollToTop = () => {
     setHovered(false);
   };
 
+  const showProgress = !hovered && progress < 80;
+
+  const getWrapperProps = () => ({
+    bgColor: '#1f2935',
+    show: progress > 0 || hovered,
+    onClick: progress === 100 ? scrollToTop : undefined,
+    onMouseEnter: handleMouseEnter,
+    onMouseLeave: handleMouseLeave,
+  });
+
+  const getProgressProps = (): ProgressProps => ({
+    value: progress,
+    color: '#fff',
+    size: 'lg',
+    className: 'absolute w-full h-full',
+  });
+
   return {
-    progress: Math.ceil(progress),
+    size,
+    icon,
+    progress,
     hovered,
     scrollToTop,
-    handleMouseEnter,
-    handleMouseLeave,
+    showProgress,
+    getWrapperProps,
+    getProgressProps,
   };
 };
 
