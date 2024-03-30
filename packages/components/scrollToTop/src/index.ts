@@ -1,7 +1,5 @@
 import './styles.scss';
+import ScrollToTop from './components/scrollToTop/scrollToTop';
+import UseScrollToTop from './components/scrollToTop/useScrollToTop';
 
-export * from './components/scrollToTop/useScrollToTop';
-
-export * from './components/scrollToTop/scrollToTop';
-
-export * from './components/scrollToTop/scrollToTop';
+export { UseScrollToTop, ScrollToTop };

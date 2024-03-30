@@ -1,4 +1,8 @@
 {
-  "name": "@pixel-design/scrollToTop",
-  "version": "0.0.1"
+  "name": "@pixel-design/scroll-to-top",
+  "version": "0.0.4",
+  "private": false,
+  "dependencies": {
+    "@pixel-design/icon": "*"
+  }
 }
